@@ -1,10 +1,10 @@
-# SecureFedHE
+# securefed (Agnibh Ghosh, Prof. Sangita Dutta)
 
 **A Decentralized Hybrid Homomorphic Encryption and Differential Privacy Framework for Scalable Federated Learning**
 
-SecureFedHE is a fully decentralized, privacy-preserving federated learning framework designed for hospital-style network environments. It combines a peer-to-peer ring topology with Selective Homomorphic Encryption (CKKS) on the final classification layer and Differential Privacy on intermediate layers, achieving strong privacy guarantees with negligible accuracy loss (~16.5ms encryption overhead per round).
+securefed is a fully decentralized, privacy-preserving federated learning framework designed for hospital-style network environments. It combines a peer-to-peer ring topology with Selective Homomorphic Encryption (CKKS) on the final classification layer and Differential Privacy on intermediate layers, achieving strong privacy guarantees with negligible accuracy loss (~16.5ms encryption overhead per round).
 
-The full research report — architecture, threat model, benchmarking, and security analysis — is available in [`docs/SecureFedHE_MEGA_FINAL.docx`](docs/SecureFedHE_MEGA_FINAL.docx).
+The full research report — architecture, threat model, benchmarking, and security analysis — is available in [`docs/securefed_MEGA_FINAL.docx`](docs/securefed_MEGA_FINAL.docx).
 
 ---
 
@@ -33,7 +33,7 @@ The full research report — architecture, threat model, benchmarking, and secur
 ## Repository Structure
 
 ```
-SecureFedHE/
+securefed/
 ├── ring1_local/                  Ring 1 — vanilla FedAvg baseline (run locally)
 │   ├── train.py
 │   ├── client.py
@@ -62,25 +62,25 @@ SecureFedHE/
 │   │   ├── results/               5/10/20/50-client scaling, α=0.1/0.3/0.5/1.0
 │   │   └── figures/
 │   ├── Architecture & Latency Files/
-│   │   ├── notebooks/SecureFedHE_Arch_Latency.ipynb
+│   │   ├── notebooks/securefed_Arch_Latency.ipynb
 │   │   ├── results/               SimpleCNN vs ResNet18, 10/50/100ms latency
 │   │   └── figures/
 │   └── Security Evaluation/
-│       ├── notebooks/SecureFedHE_Security_Eval.ipynb
+│       ├── notebooks/securefed_Security_Eval.ipynb
 │       ├── results/               MIA, DLG, model-poisoning results
 │       └── figures/
 │
 ├── fixes_colab/                  Four engineering fixes (Section 6 of the report)
 │   ├── Fix 1 — Ring Topology Resilience/
-│   │   ├── notebooks/Fix1_RingFragility_SecureFedHE.ipynb
+│   │   ├── notebooks/Fix1_RingFragility_securefed.ipynb
 │   │   ├── results/                fix1_scenario_A/B/C.csv
 │   │   └── figures/Figure10_RingFragility_Fix1.png
 │   ├── Fix 2 — Byzantine Fault Tolerance/
-│   │   ├── notebooks/Fix2_BlindPoisoning_SecureFedHE.ipynb
+│   │   ├── notebooks/Fix2_BlindPoisoning_securefed.ipynb
 │   │   ├── results/                25 CSVs: 3 attacks × 4 Byzantine fractions × 2 aggregators
 │   │   └── figures/Figure11_BlindPoisoning_Fix2.png
 │   └── Fix 3+4 — Positional Bias and Communication Efficiency/
-│       ├── notebooks/Fix3_Fix4_DriftBase64_SecureFedHE.ipynb
+│       ├── notebooks/Fix3_Fix4_DriftBase64_securefed.ipynb
 │       ├── results/                fix3_*.csv (order experiments), fix4_serialisation_benchmark.csv
 │       └── figures/                Figure12_WeightDrift_Fix3.png, Figure13_Base64Bloat_Fix4.png
 │
@@ -99,7 +99,7 @@ SecureFedHE/
 ├── dashboard/                     CSV-ingestion results dashboard
 │
 ├── docs/
-│   └── SecureFedHE_MEGA_FINAL.docx   Full research report
+│   └── securefed_MEGA_FINAL.docx   Full research report
 │
 ├── papers.json                    13-paper comparative literature matrix
 └── requirements.txt
@@ -167,8 +167,8 @@ Additional hardening implemented:
 ## Setup
 
 ```bash
-git clone https://github.com/Varunstyles/SecureFedHE.git
-cd SecureFedHE
+git clone https://github.com/Varunstyles/securefed.git
+cd securefed
 pip install -r requirements.txt
 pip install cryptography
 ```
@@ -197,7 +197,7 @@ Launches 3 Flask nodes simulating the Ring 3 peer-to-peer topology on `localhost
 
 ## Citation
 
-If you use this work, please cite the accompanying report in `docs/SecureFedHE_MEGA_FINAL.docx`.
+If you use this work, please cite the accompanying report in `docs/securefed_MEGA_FINAL.docx`.
 
 ## License
 
